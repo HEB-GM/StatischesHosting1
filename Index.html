@@ -1,10 +1,56 @@
+<!-- Datei: index.html -->
 <!DOCTYPE html>
 <html lang="de">
 <head>
     <meta charset="UTF-8">
-    <title>Hello 2World</title>
+    <title>Auftragszeit Web App</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<h1>Hello 2World</h1>
+<div class="container">
+    <h1>Auftragszeit</h1>
+    <div id="activeOrder"></div>
+
+    <div class="input-group">
+        <label for="nummerEingabe">Nummer:</label>
+        <input type="text" id="nummerEingabe" placeholder="Bitte Auftragsnummer eingeben">
+    </div>
+    <div class="input-group">
+        <label for="nummerDropdown">Vorhandene Nummern:</label>
+        <select id="nummerDropdown">
+            <option value="">-- Auswählen --</option>
+        </select>
+    </div>
+    <div class="input-group">
+        <button id="btnConfirm">Bestätigen</button>
+        <button id="btnDelete" disabled>Löschen</button>
+    </div>
+    <div class="input-group">
+        <button id="btnStart" disabled>Start</button>
+        <button id="btnStop" disabled>Stop</button>
+        <button id="btnPlus" disabled>+ 5 Min</button>
+        <button id="btnMinus" disabled>- 5 Min</button>
+    </div>
+    <div id="anzeige"></div>
+</div>
+
+<!-- Pause Modal -->
+<div id="pauseModal" class="modal">
+    <div class="modal-content">
+        <p>Kaffee / Aufstehen / WC</p>
+        <button id="modalOk">Ok</button>
+    </div>
+</div>
+
+<!-- Delete Confirmation Modal -->
+<div id="deleteModal" class="modal">
+    <div class="modal-content">
+        <p>Möchten Sie die Nummer wirklich löschen?</p>
+        <button id="modalDeleteConfirm">Ja</button>
+        <button id="modalDeleteCancel">Nein</button>
+    </div>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
